@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "458253924560",
+    "project_id": "tapes-feuzion",
+    "storage_bucket": "tapes-feuzion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458253924560:android:3c0f8b66913cfd556246d5",
+        "android_client_info": {
+          "package_name": "com.shaderbytes_feuzion.app.feuzion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458253924560-646b4t4p965t5sdtrorkleeafoe268s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlkUObNwU3CfW10hUFSQUvwP14H7ZeyFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458253924560-646b4t4p965t5sdtrorkleeafoe268s9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
