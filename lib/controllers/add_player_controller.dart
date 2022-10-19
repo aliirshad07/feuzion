@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get.dart';
+import '../core/routes/app_pages.dart';
 
 class AddPlayerController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -11,6 +14,8 @@ class AddPlayerController extends GetxController {
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
   TextEditingController positionController = TextEditingController();
+
+  final _firestore = FirebaseFirestore.instance;
 
   void dobChanged(DateTime date) {
     if (date != null) {
@@ -47,11 +52,35 @@ class AddPlayerController extends GetxController {
     super.dispose();
   }
 
-  void checkLogin() {
+  void checkLogin(){
     final isValid = formKey.currentState!.validate();
     if (!isValid) {
       return;
     }
     formKey.currentState!.save();
+  }
+
+  void addplayer()async{
+    if(firstNameController.text.isNotEmpty ||
+        lastNameController.text.isNotEmpty ||
+        dobController.text.isNotEmpty ||
+        ageController.text.isNotEmpty ||
+        weightController.text.isNotEmpty ||
+        heightController.text.isNotEmpty ||
+        positionController.text.isNotEmpty
+    ){
+      _firestore.collection('players').doc().set({
+        "firstName": firstNameController.text,
+        "lastName": lastNameController.text,
+        "DOB": dobController.text,
+        "age": ageController.text,
+        "weight": weightController.text,
+        "height": heightController.text,
+        "position": positionController.text
+      });
+      Get.toNamed(Routes.PLAYERLEVEL);
+    }else{
+      Get.snackbar("Empty Fields", "Please enter all fields");
+    }
   }
 }

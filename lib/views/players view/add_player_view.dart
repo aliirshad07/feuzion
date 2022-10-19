@@ -118,19 +118,21 @@ class AddPlayerView extends GetView<AddPlayerController> {
                       SizedBox(
                         width: 25.w,
                       ),
-                      SizedBox(
-                          width: 173.54.w,
-                          child: LoginFields(
-                            hintText: 'Weight',
-                            fieldValidator: weightValidator,
-                            controller: controller.weightController,
-                          )
+                      Expanded(
+                        child: SizedBox(
+                            width: 173.54.w,
+                            child: LoginFields(
+                              hintText: 'Weight',
+                              fieldValidator: weightValidator,
+                              controller: controller.weightController,
+                            )
                           // MyTextField(
                           //   labelText: 'Weight',
                           //   controller: controller.weightController,
                           //   fieldvalidator: weightValidator,
                           // ),
-                          ),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -143,7 +145,7 @@ class AddPlayerView extends GetView<AddPlayerController> {
                           child: LoginFields(
                             hintText: 'Height',
                             fieldValidator: heightValidator,
-                            controller: controller.heightController,
+                            controller: controller.heightController, 
                           )
                           //
                           // MyTextField(
@@ -155,18 +157,20 @@ class AddPlayerView extends GetView<AddPlayerController> {
                       SizedBox(
                         width: 25.w,
                       ),
-                      SizedBox(
-                          width: 173.54.w,
-                          child: LoginFields(
-                            hintText: 'Position',
-                            controller: controller.positionController,
-                            fieldValidator: positionValidator,
-                          )
-                          // MyTextField(
-                          //   labelText: 'Position',
-                          //   controller: controller.positionController,
-                          // ),
-                          ),
+                      Expanded(
+                        child: SizedBox(
+                            width: 173.54.w,
+                            child: LoginFields(
+                              hintText: 'Position',
+                              controller: controller.positionController,
+                              fieldValidator: positionValidator,
+                            )
+                            // MyTextField(
+                            //   labelText: 'Position',
+                            //   controller: controller.positionController,
+                            // ),
+                            ),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -175,7 +179,7 @@ class AddPlayerView extends GetView<AddPlayerController> {
                   InkWell(
                     onTap: () {
                       controller.checkLogin();
-                      Get.toNamed(Routes.PLAYERLEVEL);
+                      controller.addplayer();
                     },
                     child: TextButtonWidget(text: "Save"),
                   ),

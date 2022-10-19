@@ -111,7 +111,7 @@ class SignupController extends GetxController {
     );
     
     if(res == 'success'){
-      Get.toNamed(Routes.HOME);
+      Get.toNamed(Routes.BOTTOMTABS);
     }else{
       Get.snackbar(res, "Invalid user format");
     }

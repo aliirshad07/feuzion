@@ -15,7 +15,7 @@ void main() async{
       builder: (BuildContext context, Widget? child) {
         return GestureDetector(
           child: GetMaterialApp(
-            title: "Tapez Fusion",
+            title: "Application",
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
             // home: LoginView(),
