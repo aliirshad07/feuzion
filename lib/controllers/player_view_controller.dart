@@ -20,4 +20,6 @@ class PlayerViewController extends GetxController {
   }
 
   void increment() => count.value++;
+
+
 }

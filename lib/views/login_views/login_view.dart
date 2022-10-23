@@ -57,8 +57,7 @@ class LoginView extends GetView<LoginController> {
                           MyButton(
                             onPressed: () {
                               controller.checkLogin();
-                              // controller.logginginUser();
-                              Get.toNamed(Routes.BOTTOMTABS);
+                              controller.logginginUser();
                             },
                             text: 'LOGIN',
                             textColor: kWhiteColor,

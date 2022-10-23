@@ -92,7 +92,7 @@ class AppPages {
     ),
     GetPage(
       name: Paths.PLAYERLEVEL,
-      page: () => const PlayerLevelView(),
+      page: () => PlayerLevelView(),
       binding: PlayerLevelBinding(),
     ),
     GetPage(

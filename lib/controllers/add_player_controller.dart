@@ -14,6 +14,7 @@ class AddPlayerController extends GetxController {
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
   TextEditingController positionController = TextEditingController();
+  int playerNumber = 1;
 
   final _firestore = FirebaseFirestore.instance;
 
@@ -76,11 +77,13 @@ class AddPlayerController extends GetxController {
         "age": ageController.text,
         "weight": weightController.text,
         "height": heightController.text,
-        "position": positionController.text
+        "position": positionController.text,
+        "playerNumber": playerNumber,
       });
       Get.toNamed(Routes.PLAYERLEVEL);
     }else{
       Get.snackbar("Empty Fields", "Please enter all fields");
     }
+    playerNumber++;
   }
 }

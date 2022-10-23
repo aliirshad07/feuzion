@@ -9,6 +9,7 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../core/colors.dart';
 import '../../core/widgets/custom_app_bar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PlayerLevelView extends StatefulWidget {
   const PlayerLevelView({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class PlayerLevelView extends StatefulWidget {
 }
 
 class _PlayerLevelViewState extends State<PlayerLevelView> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,69 +36,26 @@ class _PlayerLevelViewState extends State<PlayerLevelView> {
         appBar: CustomAppBar(
           title: "Players",
         ),
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 25.h,
-              ),
-              MyText(
-                text: "This Week",
-                size: 20.sp,
-                weight: FontWeight.w500,
-                color: kWhiteColor,
-              ),
-              SizedBox(
-                height: 12.h,
-              ),
-              InkWell(
-                  onTap: () {
-                    Get.toNamed(Routes.PLAYERVIEWPROFILE);
-                  },
-                  child: _PlayerLevelContainer(
-                    textcolor: Color(0xffFF6060),
-                    color: AlwaysStoppedAnimation<Color>(
-                      Color(0xffFF6060),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 40),
+          child: StreamBuilder(
+            stream: FirebaseFirestore.instance.collection('players').snapshots(),
+            builder: (context,AsyncSnapshot snapshot){
+              if(snapshot.hasError){
+                return Center(child: Text(snapshot.error.toString()),);
+              }
+              return ListView.builder(
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (context, index){
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                    child: _PlayerLevelContainer(
+                      textrank: snapshot.data!.docs[index]["playerNumber"],
                     ),
-                  )),
-              SizedBox(
-                height: 20.h,
-              ),
-              _PlayerLevelContainer(
-                textrank: "#2",
-                textcolor: Color(0xff6CDE93),
-                color: AlwaysStoppedAnimation<Color>(
-                  Color(0xff6CDE93),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              _PlayerLevelContainer(
-                textcolor: Color(0xffFF6060),
-                color: AlwaysStoppedAnimation<Color>(
-                  Color(0xffFF6060),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              _PlayerLevelContainer(
-                textcolor: Color(0xffFF6060),
-                color: AlwaysStoppedAnimation<Color>(
-                  Color(0xffFF6060),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              _PlayerLevelContainer(
-                textcolor: Color(0xffFF6060),
-                color: AlwaysStoppedAnimation<Color>(
-                  Color(0xffFF6060),
-                ),
-              ),
-            ],
+                  );
+                },
+              );
+            },
           ),
         ),
       ),
@@ -109,69 +68,72 @@ class _PlayerLevelContainer extends StatelessWidget {
   final color;
   final textcolor;
   const _PlayerLevelContainer({
-    Key? key,
     this.color,
     this.textrank = '#1',
     this.textcolor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      height: 92.h,
-      width: 383.w,
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 35.h,
-                backgroundImage: AssetImage("assets/icons/player_level_dp.png"),
-              ),
-              SizedBox(
-                width: 11.w,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  MyText(
-                    text: "Player 1",
-                    size: 20.sp,
-                    weight: FontWeight.w500,
-                    color: kBlackColor,
-                    fontFamily: 'Roboto',
-                  ),
-                  MyText(
-                    text: "Level 5",
-                    size: 11.sp,
-                    weight: FontWeight.w500,
-                    color: Colors.grey,
-                    fontFamily: 'Roboto',
-                  ),
-                  SizedBox(
-                    width: 213.w,
-                    child: LinearProgressIndicator(
-                      valueColor: color,
-                      backgroundColor: Color(0xffFF6060).withOpacity(0.2),
-                      value: 0.5,
-                      minHeight: 10.h,
+    return GestureDetector(
+      onTap: ()=>Get.toNamed(Routes.PLAYERVIEWPROFILE),
+      child: Container(
+        padding: EdgeInsets.all(10),
+        height: 92.h,
+        width: 383.w,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  radius: 35.h,
+                  backgroundImage: AssetImage("assets/icons/player_level_dp.png"),
+                ),
+                SizedBox(
+                  width: 11.w,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MyText(
+                      text: 'Player $textrank',
+                      size: 20.sp,
+                      weight: FontWeight.w500,
+                      color: kBlackColor,
+                      fontFamily: 'Roboto',
                     ),
-                  )
-                ],
-              ),
-            ],
-          ),
-          MyText(
-            color: textcolor,
-            text: "$textrank",
-            size: 20.sp,
-            weight: FontWeight.w500,
-          )
-        ],
+                    MyText(
+                      text: "Level 5",
+                      size: 11.sp,
+                      weight: FontWeight.w500,
+                      color: Colors.grey,
+                      fontFamily: 'Roboto',
+                    ),
+                    SizedBox(
+                      width: 213.w,
+                      child: LinearProgressIndicator(
+                        valueColor: color,
+                        backgroundColor: Color(0xffFF6060).withOpacity(0.2),
+                        value: 0.5,
+                        minHeight: 10.h,
+                        color: Colors.red,
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            MyText(
+              color: textcolor,
+              text: "$textrank",
+              size: 20.sp,
+              weight: FontWeight.w500,
+            )
+          ],
+        ),
       ),
     );
   }
