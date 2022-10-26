@@ -1,12 +1,7 @@
 import 'package:feuzion/core/routes/app_pages.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../core/colors.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -79,8 +74,8 @@ class _PlayerLevelContainer extends StatelessWidget {
       onTap: ()=>Get.toNamed(Routes.PLAYERVIEWPROFILE),
       child: Container(
         padding: EdgeInsets.all(10),
-        height: 92.h,
-        width: 383.w,
+        height: 92,
+        width: 383,
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,11 +83,11 @@ class _PlayerLevelContainer extends StatelessWidget {
             Row(
               children: [
                 CircleAvatar(
-                  radius: 35.h,
+                  radius: 35,
                   backgroundImage: AssetImage("assets/icons/player_level_dp.png"),
                 ),
                 SizedBox(
-                  width: 11.w,
+                  width: 11,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,25 +95,25 @@ class _PlayerLevelContainer extends StatelessWidget {
                   children: [
                     MyText(
                       text: 'Player $textrank',
-                      size: 20.sp,
+                      size: 20,
                       weight: FontWeight.w500,
                       color: kBlackColor,
                       fontFamily: 'Roboto',
                     ),
                     MyText(
                       text: "Level 5",
-                      size: 11.sp,
+                      size: 11,
                       weight: FontWeight.w500,
                       color: Colors.grey,
                       fontFamily: 'Roboto',
                     ),
                     SizedBox(
-                      width: 213.w,
+                      width: 213,
                       child: LinearProgressIndicator(
                         valueColor: color,
                         backgroundColor: Color(0xffFF6060).withOpacity(0.2),
                         value: 0.5,
-                        minHeight: 10.h,
+                        minHeight: 10,
                         color: Colors.red,
                       ),
                     )
@@ -129,7 +124,7 @@ class _PlayerLevelContainer extends StatelessWidget {
             MyText(
               color: textcolor,
               text: "$textrank",
-              size: 20.sp,
+              size: 20,
               weight: FontWeight.w500,
             )
           ],

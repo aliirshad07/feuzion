@@ -1,10 +1,7 @@
 import 'package:feuzion/controllers/player_view_controller.dart';
 import 'package:feuzion/core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../core/colors.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/my_text.dart';
@@ -33,12 +30,12 @@ class PlayersView extends GetView<PlayerViewController> {
         body: Column(
           children: [
             SizedBox(
-              height: 102.h,
+              height: 102,
             ),
             Center(
               child: MyText(
                 text: "No players to show. Add some players",
-                size: 14.sp,
+                size: 14,
                 weight: FontWeight.w500,
                 color: Colors.grey,
               ),

@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
 import '../../core/colors.dart';
 import '../../core/routes/app_pages.dart';
 import '../../core/widgets/custom_app_bar.dart';
@@ -30,24 +26,24 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
         body: Column(
           children: [
             SizedBox(
-              height: 25.h,
+              height: 25,
             ),
             Center(
               child: MyText(
                 text: "This Week",
-                size: 20.sp,
+                size: 20,
                 weight: FontWeight.w500,
                 color: kWhiteColor,
                 fontFamily: 'Roboto',
               ),
             ),
             SizedBox(
-              height: 32.h,
+              height: 32,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              width: 383.w,
-              height: 527.h,
+              width: 383,
+              height: 527,
               color: Color(0xffF4F5FA),
               child: Column(
                 children: [
@@ -57,7 +53,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                       onTap: () => Get.toNamed(Routes.TECHNINCALFORM),
                       child: MyText(
                         text: "Edit",
-                        size: 14.sp,
+                        size: 14,
                         weight: FontWeight.w400,
                         color: Colors.black.withOpacity(0.5),
                         fontFamily: 'Roboto',
@@ -69,13 +65,13 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                     children: [
                       MyText(
                         text: "Education",
-                        size: 20.sp,
+                        size: 20,
                         weight: FontWeight.w500,
                         color: Colors.black,
                         fontFamily: 'Roboto',
                       ),
                       SizedBox(
-                        height: 32.h,
+                        height: 32,
                       ),
                       CircularPercentIndicator(
                         backgroundColor: Color(0xff3DA9FC).withOpacity(0.5),
@@ -86,14 +82,14 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                         center: new Text(
                           "67%",
                           style: new TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 16.sp),
+                              fontWeight: FontWeight.w600, fontSize: 16),
                         ),
                         progressColor: Color(0xff3DA9FC),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 31.h,
+                    height: 31,
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 5),
@@ -107,30 +103,30 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                               children: [
                                 MyText(
                                   text: "Touch",
-                                  size: 20.sp,
+                                  size: 20,
                                   weight: FontWeight.w500,
                                   color: Colors.black,
                                   fontFamily: 'Roboto',
                                 ),
                                 SizedBox(
-                                  height: 15.h,
+                                  height: 15,
                                 ),
                                 SizedBox(
-                                  width: 213.w,
+                                  width: 213,
                                   child: LinearProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff3DA9FC)),
                                     backgroundColor:
                                         Color(0xff3DA9FC).withOpacity(0.2),
                                     value: 0.9,
-                                    minHeight: 10.h,
+                                    minHeight: 10,
                                   ),
                                 ),
                               ],
                             ),
                             MyText(
                               text: "+5",
-                              size: 24.sp,
+                              size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
                               fontFamily: 'Roboto',
@@ -138,7 +134,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                           ],
                         ),
                         SizedBox(
-                          height: 33.h,
+                          height: 33,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -148,30 +144,30 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                               children: [
                                 MyText(
                                   text: "Intelligence",
-                                  size: 20.sp,
+                                  size: 20,
                                   weight: FontWeight.w500,
                                   color: Colors.black,
                                   fontFamily: 'Roboto',
                                 ),
                                 SizedBox(
-                                  height: 15.h,
+                                  height: 15,
                                 ),
                                 SizedBox(
-                                  width: 213.w,
+                                  width: 213,
                                   child: LinearProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff3DA9FC)),
                                     backgroundColor:
                                         Color(0xff3DA9FC).withOpacity(0.2),
                                     value: 0.5,
-                                    minHeight: 10.h,
+                                    minHeight: 10,
                                   ),
                                 ),
                               ],
                             ),
                             MyText(
                               text: "-2",
-                              size: 24.sp,
+                              size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
                               fontFamily: 'Roboto',
@@ -179,7 +175,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                           ],
                         ),
                         SizedBox(
-                          height: 33.h,
+                          height: 33,
                         ),
                       ],
                     ),

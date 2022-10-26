@@ -2,10 +2,7 @@ import 'package:feuzion/core/colors.dart';
 import 'package:feuzion/core/math_utils.dart';
 import 'package:feuzion/core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
-
 import '../../controllers/payment_controller.dart';
 import '../../core/widgets/my_text.dart';
 
@@ -23,7 +20,7 @@ class PaymentOptionView extends GetView<PaymentController> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              height: 145.h,
+              height: 145,
             ),
             Container(
               padding: EdgeInsets.all(9),

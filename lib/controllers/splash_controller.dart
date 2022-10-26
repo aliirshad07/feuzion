@@ -1,27 +1,30 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:feuzion/core/collections.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
-import '../core/routes/app_pages.dart';
-
 class SplashController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
   @override
   void onInit() async {
     super.onInit();
-    await Future.delayed(const Duration(seconds: 2));
-    Get.toNamed(Routes.LOGIN);
-  }
+    FirebaseAuth auth = FirebaseAuth.instance;
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+    String uid = auth.currentUser == null ? "" : auth.currentUser!.uid;
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
+    await Future.delayed(const Duration(seconds: 1), () async {
+      if (uid.isEmpty) {
+        Get.offAllNamed("/login");
+        return;
+      }
 
-  void increment() => count.value++;
+      DocumentSnapshot documentSnapshot = await usersCollection.doc(uid).get();
+
+      if (!documentSnapshot["accountCompleted"]) {
+        Get.offAllNamed("/complete_account", parameters: {"uid": uid});
+        return;
+      }
+
+      Get.offAllNamed("/root", parameters: {"uid": uid});
+    });
+  }
 }

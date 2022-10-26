@@ -1,8 +1,6 @@
 import 'package:feuzion/core/widgets/custom_app_bar.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/colors.dart';
@@ -52,17 +50,17 @@ class _PlayerPerformanceViewState extends State<PlayerPerformanceView> {
         body: Column(
           children: [
             SizedBox(
-              height: 25.h,
+              height: 25,
             ),
             MyText(
               text: "This Week",
-              size: 20.sp,
+              size: 20,
               weight: FontWeight.w500,
               color: kWhiteColor,
               fontFamily: 'Roboto',
             ),
             SizedBox(
-              height: 81.h,
+              height: 81,
             ),
             ListView.builder(
                 shrinkWrap: true,
@@ -96,8 +94,8 @@ class _ReuseContainerPerformance extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-      height: 60.h,
-      width: 374.w,
+      height: 60,
+      width: 374,
       color: Color(0xffF4F5FA),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,11 +104,11 @@ class _ReuseContainerPerformance extends StatelessWidget {
             children: [
               SvgPicture.asset("$svgAssetPerformance"),
               SizedBox(
-                width: 10.w,
+                width: 10,
               ),
               MyText(
                 text: "$middleText",
-                size: 20.sp,
+                size: 20,
                 weight: FontWeight.w500,
                 color: Color(0xff323F4B),
                 fontFamily: 'Roboto',
@@ -119,7 +117,7 @@ class _ReuseContainerPerformance extends StatelessWidget {
           ),
           MyText(
             text: "$percentText",
-            size: 18.sp,
+            size: 18,
             weight: FontWeight.w400,
             color: Color(0xff323F4B),
             fontFamily: 'Roboto',

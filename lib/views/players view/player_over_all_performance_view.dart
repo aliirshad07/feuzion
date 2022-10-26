@@ -1,11 +1,7 @@
 import 'package:feuzion/core/routes/app_pages.dart';
 import 'package:feuzion/core/widgets/custom_app_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../core/colors.dart';
 import '../../core/widgets/my_text.dart';
 
@@ -32,16 +28,16 @@ class _PlayerOverAllPerformanceViewState
           child: Column(
             children: [
               SizedBox(
-                height: 25.h,
+                height: 25,
               ),
               MyText(
                 text: "This Week",
-                size: 20.sp,
+                size: 20,
                 weight: FontWeight.w500,
                 color: kWhiteColor,
               ),
               SizedBox(
-                height: 32.h,
+                height: 32,
               ),
               GestureDetector(
                 onTap: () {
@@ -58,7 +54,7 @@ class _PlayerOverAllPerformanceViewState
                 ),
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () {
@@ -75,7 +71,7 @@ class _PlayerOverAllPerformanceViewState
                 ),
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () {
@@ -92,7 +88,7 @@ class _PlayerOverAllPerformanceViewState
                 ),
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () {
@@ -109,7 +105,7 @@ class _PlayerOverAllPerformanceViewState
                 ),
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () {
@@ -152,8 +148,8 @@ class _PlayerLevelContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      height: 92.h,
-      width: 383.w,
+      height: 92,
+      width: 383,
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -166,25 +162,25 @@ class _PlayerLevelContainer extends StatelessWidget {
                 children: [
                   MyText(
                     text: "$titleText",
-                    size: 20.sp,
+                    size: 20,
                     weight: FontWeight.w500,
                     color: kBlackColor,
                     fontFamily: 'Roboto',
                   ),
                   MyText(
                     text: "Touch, Intelligence",
-                    size: 11.sp,
+                    size: 11,
                     weight: FontWeight.w500,
                     color: Colors.grey,
                     fontFamily: 'Roboto',
                   ),
                   SizedBox(
-                    width: 213.w,
+                    width: 213,
                     child: LinearProgressIndicator(
                       valueColor: color,
                       backgroundColor: bgcolor,
                       value: 0.5,
-                      minHeight: 10.h,
+                      minHeight: 10,
                     ),
                   )
                 ],
@@ -194,7 +190,7 @@ class _PlayerLevelContainer extends StatelessWidget {
           MyText(
             color: percentTextcolor,
             text: "$percentText",
-            size: 20.sp,
+            size: 20,
             weight: FontWeight.w500,
           )
         ],

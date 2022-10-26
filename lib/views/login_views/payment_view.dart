@@ -2,15 +2,9 @@ import 'package:feuzion/controllers/payment_view_controller.dart';
 import 'package:feuzion/core/colors.dart';
 import 'package:feuzion/core/widgets/form_validators.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
-import 'package:feuzion/core/widgets/my_text_field.dart';
-import 'package:feuzion/views/login_views/payment_successful_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../core/constants.dart';
 import '../../core/routes/app_pages.dart';
 
@@ -43,13 +37,13 @@ class _PaymentViewState extends State<PaymentView> {
               children: [
                 MyText(
                   text: "Add Card Details",
-                  size: 24.sp,
+                  size: 24,
                   color: kWhiteColor,
                   weight: FontWeight.w400,
                   fontFamily: 'Roboto',
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 40,
                 ),
                 _paymentViewTextField(
                   fieldValidator: nameValidator,
@@ -57,7 +51,7 @@ class _PaymentViewState extends State<PaymentView> {
                   labelText: "Name on Card",
                 ),
                 SizedBox(
-                  height: 32.h,
+                  height: 32,
                 ),
                 _paymentViewTextField(
                   fieldValidator: cardValidator,
@@ -65,12 +59,12 @@ class _PaymentViewState extends State<PaymentView> {
                   labelText: "Card Number",
                 ),
                 SizedBox(
-                  height: 32.h,
+                  height: 32,
                 ),
                 Row(
                   children: [
                     SizedBox(
-                      width: 148.72.w,
+                      width: 148.72,
                       child: TextField(
                         readOnly: true,
                         style: InputStyling.textStyle,
@@ -110,10 +104,10 @@ class _PaymentViewState extends State<PaymentView> {
                       ),
                     ),
                     SizedBox(
-                      width: 81.w,
+                      width: 81,
                     ),
                     SizedBox(
-                      width: 144.01.w,
+                      width: 144.01,
                       child: _paymentViewTextField(
                         fieldValidator: cvvValidator,
                         controller: controller.cvvnumberController,
@@ -123,7 +117,7 @@ class _PaymentViewState extends State<PaymentView> {
                   ],
                 ),
                 SizedBox(
-                  height: 90.h,
+                  height: 90,
                 ),
                 InkWell(
                   onTap: () => Get.toNamed(Routes.PAYMENTSUCCESSFUL),
@@ -146,22 +140,22 @@ class _LockButtonPaymentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 58.h,
-      width: 374.w,
+      height: 58,
+      width: 374,
       color: Color(0xff04497A),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset("assets/icons/lock_icon.svg"),
           SizedBox(
-            width: 13.w,
+            width: 13,
           ),
           MyText(
             text: "Pay £19",
             color: kWhiteColor,
             weight: FontWeight.w700,
             fontFamily: 'Roboto',
-            size: 24.sp,
+            size: 24,
           )
         ],
       ),
@@ -193,7 +187,7 @@ class _paymentViewTextField extends StatelessWidget {
         labelText: "$labelText",
         labelStyle: new TextStyle(
             color: Colors.white.withOpacity(0.8),
-            fontSize: 12.sp,
+            fontSize: 12,
             fontFamily: 'Roboto',
             fontWeight: FontWeight.w400),
         enabledBorder: UnderlineInputBorder(

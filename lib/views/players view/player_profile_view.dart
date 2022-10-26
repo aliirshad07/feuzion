@@ -2,17 +2,16 @@ import 'package:feuzion/controllers/player_profile_controller.dart';
 import 'package:feuzion/core/routes/app_pages.dart';
 import 'package:feuzion/core/widgets/custom_app_bar.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../core/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PlayerProfileView extends GetView<PlayerViewProfileController> {
+  const PlayerProfileView({super.key});
+
 
 
   @override
@@ -35,17 +34,17 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 23.h,
+                        height: 23,
                       ),
                       Center(
                         child: CircleAvatar(
-                          radius: 60.h,
+                          radius: 60,
                           backgroundImage:
                           AssetImage("assets/icons/player_level_dp.png"),
                         ),
                       ),
                       SizedBox(
-                        height: 23.h,
+                        height: 23,
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 13),
@@ -67,108 +66,108 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                               children: [
                                 MyText(
                                   text: "Player ${snapshot.data!.docs["playerNumber"]}",
-                                  size: 30.sp,
+                                  size: 30,
                                   weight: FontWeight.w700,
                                   color: kWhiteColor,
                                   fontFamily: 'Roboto',
                                 ),
                                 SvgPicture.asset(
                                   "assets/icons/pencil_icon_white.svg",
-                                  height: 24.h,
-                                  width: 24.w,
+                                  height: 24,
+                                  width: 24,
                                 )
                               ],
                             ),
                             SizedBox(
-                              height: 16.h,
+                              height: 16,
                             ),
                             Row(
                               children: [
                                 MyText(
                                   text: "Age:",
                                   color: Colors.white.withOpacity(0.5),
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w500,
                                   fontFamily: 'Roboto',
                                 ),
                                 SizedBox(
-                                  width: 5.w,
+                                  width: 5,
                                 ),
                                 MyText(
                                   text: snapshot.data!.docs["age"],
                                   color: Colors.white,
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w500,
                                   fontFamily: 'Roboto',
                                 )
                               ],
                             ),
                             SizedBox(
-                              height: 5.h,
+                              height: 5,
                             ),
                             Row(
                               children: [
                                 MyText(
                                   text: "Height:",
                                   color: Colors.white.withOpacity(0.5),
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w400,
                                 ),
                                 SizedBox(
-                                  width: 2.w,
+                                  width: 2,
                                 ),
                                 MyText(
                                   text: snapshot.data!.docs["height"],
                                   color: Colors.white,
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w500,
                                   fontFamily: 'Roboto',
                                 )
                               ],
                             ),
                             SizedBox(
-                              height: 5.h,
+                              height: 5,
                             ),
                             Row(
                               children: [
                                 MyText(
                                   text: "Weight:",
                                   color: Colors.white.withOpacity(0.5),
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w400,
                                   fontFamily: 'Roboto',
                                 ),
                                 SizedBox(
-                                  width: 2.w,
+                                  width: 2,
                                 ),
                                 MyText(
                                   text: snapshot.data!.docs["weight"],
                                   color: Colors.white,
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w500,
                                   fontFamily: 'Roboto',
                                 )
                               ],
                             ),
                             SizedBox(
-                              height: 5.h,
+                              height: 5,
                             ),
                             Row(
                               children: [
                                 MyText(
                                   text: "Position:",
                                   color: Colors.white.withOpacity(0.5),
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w400,
                                   fontFamily: 'Roboto',
                                 ),
                                 SizedBox(
-                                  width: 2.w,
+                                  width: 2,
                                 ),
                                 MyText(
                                   text: snapshot.data!.docs["position"],
                                   color: Colors.white,
-                                  size: 14.sp,
+                                  size: 14,
                                   weight: FontWeight.w500,
                                   fontFamily: 'Roboto',
                                 )
@@ -178,7 +177,7 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                         ),
                       ),
                       SizedBox(
-                        height: 27.h,
+                        height: 27,
                       ),
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -187,13 +186,13 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                           children: [
                             MyText(
                               text: "Dashboard",
-                              size: 24.sp,
+                              size: 24,
                               color: kWhiteColor,
                               weight: FontWeight.w700,
                               fontFamily: 'Poppins',
                             ),
                             SizedBox(
-                              height: 29.h,
+                              height: 29,
                             ),
                             Row(
                               children: [
@@ -208,7 +207,7 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 15.w,
+                                  width: 15,
                                 ),
                                 InkWell(
                                   onTap: () {
@@ -223,7 +222,7 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                               ],
                             ),
                             SizedBox(
-                              height: 20.h,
+                              height: 20,
                             ),
                             Row(
                               children: [
@@ -232,7 +231,7 @@ class PlayerProfileView extends GetView<PlayerViewProfileController> {
                                   bottomText: 'Diet Plan',
                                 ),
                                 SizedBox(
-                                  width: 15.w,
+                                  width: 15,
                                 ),
                                 _SvgConatiner(
                                   svgAsset: 'assets/icons/dumble.svg',
@@ -267,8 +266,8 @@ class _SvgConatiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.only(top: 10, right: 10, left: 10, bottom: 10),
-        height: 138.h,
-        width: 177.w,
+        height: 138,
+        width: 177,
         decoration: BoxDecoration(
             color: Color(0xff04497A),
             borderRadius: BorderRadius.circular(8),
@@ -285,7 +284,7 @@ class _SvgConatiner extends StatelessWidget {
             SvgPicture.asset("$svgAsset"),
             MyText(
               text: "$bottomText",
-              size: 18.sp,
+              size: 18,
               weight: FontWeight.w500,
               color: kWhiteColor,
               fontFamily: 'Roboto',
@@ -313,8 +312,8 @@ class _ReusePlayerProfileConatiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 10, right: 10, left: 10),
-      height: 138.h,
-      width: 177.w,
+      height: 138,
+      width: 177,
       decoration: BoxDecoration(
         color: Color(0xff04497A),
         boxShadow: [
@@ -334,7 +333,7 @@ class _ReusePlayerProfileConatiner extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: MyText(
               text: "$textTop",
-              size: 15.sp,
+              size: 15,
               weight: FontWeight.w500,
               color: kWhiteColor,
               fontFamily: 'Roboto',
@@ -349,14 +348,14 @@ class _ReusePlayerProfileConatiner extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 5.h,
+            height: 5,
           ),
           Align(
             alignment: Alignment.bottomRight,
             child: SvgPicture.asset("assets/icons/forwardArrow.svg"),
           ),
           SizedBox(
-            height: 5.h,
+            height: 5,
           )
         ],
       ),
@@ -381,7 +380,7 @@ class _ReuseCircleProgressVisit extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircularPercentIndicator(
       backgroundColor: Color(0xffF1F1F1),
-      radius: 40.h,
+      radius: 40,
       lineWidth: 6.0,
       animation: true,
       percent: percentage,
@@ -389,7 +388,7 @@ class _ReuseCircleProgressVisit extends StatelessWidget {
         fillpercent,
         style: new TextStyle(
             fontWeight: FontWeight.w600,
-            fontSize: 16.sp,
+            fontSize: 16,
             color: Colors.white,
             fontFamily: 'Roboto'),
       ),

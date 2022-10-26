@@ -1,12 +1,11 @@
+import 'package:feuzion/controllers/completeaccount_controller.dart';
 import 'package:feuzion/controllers/diet_plan_controller.dart';
 import 'package:feuzion/controllers/payment_view_controller.dart';
 import 'package:feuzion/controllers/player_aesthetic_controller.dart';
 import 'package:feuzion/controllers/player_education_controller.dart';
 import 'package:feuzion/controllers/player_over_all_performance_controller.dart';
 import 'package:feuzion/controllers/player_view_controller.dart';
-import 'package:feuzion/views/login_views/payment_view.dart';
 import 'package:get/get.dart';
-
 import '../controllers/add_player_controller.dart';
 import '../controllers/bottom_tabs_controller.dart';
 import '../controllers/home_controller.dart';
@@ -21,16 +20,6 @@ import '../controllers/player_technical_controller.dart';
 import '../controllers/player_technical_form_controller.dart';
 import '../controllers/signup_controller.dart';
 import '../controllers/splash_controller.dart';
-import '../views/players view/player_performance_view.dart';
-
-class HomeViewBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<HomeViewController>(
-      () => HomeViewController(),
-    );
-  }
-}
 
 class SplashBinding extends Bindings {
   @override
@@ -41,20 +30,11 @@ class SplashBinding extends Bindings {
   }
 }
 
-class BottomTabsBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<BottomTabsController>(
-      () => BottomTabsController(),
-    );
-  }
-}
-
 class LoginBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<LoginController>(
-      () => LoginController(),
+          () => LoginController(),
     );
   }
 }
@@ -63,10 +43,42 @@ class SignupBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<SignupController>(
-      () => SignupController(),
+          () => SignupController(),
     );
   }
 }
+
+class CompleteAccountBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<CompleteAccountController>(
+          () => CompleteAccountController(),
+    );
+  }
+}
+
+// ###############################################################################
+
+class HomeViewBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<HomeViewController>(
+      () => HomeViewController(),
+    );
+  }
+}
+
+
+
+class RootBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<BottomTabsController>(
+      () => BottomTabsController(),
+    );
+  }
+}
+
 
 class PaymentBinding extends Bindings {
   @override

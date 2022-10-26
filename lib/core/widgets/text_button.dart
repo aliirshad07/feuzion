@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../colors.dart';
 import 'my_text.dart';
 
@@ -15,8 +13,8 @@ class TextButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 58.h,
-      width: 374.w,
+      height: 58,
+      width: 374,
       color: Color(0xff04497A),
       child: Center(
         child: MyText(
@@ -24,7 +22,7 @@ class TextButtonWidget extends StatelessWidget {
           color: kWhiteColor,
           weight: FontWeight.w500,
           fontFamily: 'Roboto',
-          size: 24.sp,
+          size: 24,
         ),
       ),
     );

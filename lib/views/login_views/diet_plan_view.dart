@@ -1,9 +1,6 @@
 import 'package:feuzion/controllers/diet_plan_controller.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../core/colors.dart';
@@ -26,19 +23,19 @@ class DietPlanView extends GetView<DietPlanController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               _DownloadContainer(
                 plan: 'Starter Plan',
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               _DownloadContainer(
                 plan: 'Intermedicate Plan',
               ),
               SizedBox(
-                height: 20.h,
+                height: 20,
               ),
               _DownloadContainer(
                 plan: 'Premium Plan',
@@ -66,18 +63,18 @@ class _DownloadContainer extends StatelessWidget {
         MyText(
           text: "$plan",
           color: kWhiteColor,
-          size: 16.sp,
+          size: 16,
           fontFamily: "Roboto",
           weight: FontWeight.w500,
         ),
         SizedBox(
-          height: 10.h,
+          height: 10,
         ),
         InkWell(
           onTap: () {},
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10),
-            height: 60.h,
+            height: 60,
             width: Get.width,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -89,7 +86,7 @@ class _DownloadContainer extends StatelessWidget {
                 MyText(
                   text: "Download",
                   color: kBlackColor,
-                  size: 14.sp,
+                  size: 14,
                   fontFamily: "Roboto",
                   weight: FontWeight.w400,
                 ),

@@ -1,10 +1,6 @@
-import 'package:feuzion/core/widgets/my_text_field.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../core/colors.dart';
 import '../../core/constants.dart';
 import '../../core/widgets/custom_app_bar.dart';
@@ -32,8 +28,8 @@ class _PlayerTechnicalFormState extends State<PlayerTechnicalForm> {
           body: Container(
             padding: EdgeInsets.only(top: 27, left: 20, right: 20),
             margin: EdgeInsets.only(top: 85, right: 16, left: 16),
-            width: 383.w,
-            height: 527.h,
+            width: 383,
+            height: 527,
             color: Color(0xffF4F5FA),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,27 +37,27 @@ class _PlayerTechnicalFormState extends State<PlayerTechnicalForm> {
                 Center(
                   child: MyText(
                     text: "Technical",
-                    size: 20.sp,
+                    size: 20,
                     weight: FontWeight.w500,
                     color: Colors.black,
                     fontFamily: 'Roboto',
                   ),
                 ),
                 SizedBox(
-                  height: 55.h,
+                  height: 55,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MyText(
                       text: "Touch",
-                      size: 18.sp,
+                      size: 18,
                       color: kBlackColor,
                       weight: FontWeight.w500,
                       fontFamily: 'Roboto',
                     ),
                     SizedBox(
-                      height: 11.h,
+                      height: 11,
                     ),
                     _TextForm(
                       labelText: 'Enter Value',
@@ -69,25 +65,25 @@ class _PlayerTechnicalFormState extends State<PlayerTechnicalForm> {
                   ],
                 ),
                 SizedBox(
-                  height: 28.h,
+                  height: 28,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MyText(
                       text: "Touch",
-                      size: 18.sp,
+                      size: 18,
                       color: kBlackColor,
                       weight: FontWeight.w500,
                       fontFamily: 'Roboto',
                     ),
                     SizedBox(
-                      height: 11.h,
+                      height: 11,
                     ),
                     _TextForm(
                       labelText: 'Enter Value',
                     ),
-                    SizedBox(height: 66.h),
+                    SizedBox(height: 66),
                     InkWell(
                       onTap: () => Get.back(),
                       child: TextButtonWidget(

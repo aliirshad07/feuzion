@@ -1,9 +1,6 @@
 import 'package:feuzion/core/routes/app_pages.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../core/colors.dart';
@@ -30,22 +27,22 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
         body: Column(
           children: [
             SizedBox(
-              height: 25.h,
+              height: 25,
             ),
             Center(
               child: MyText(
                 text: "This Week",
-                size: 20.sp,
+                size: 20,
                 weight: FontWeight.w500,
                 color: kWhiteColor,
               ),
             ),
             SizedBox(
-              height: 32.h,
+              height: 32,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              width: 383.w,
+              width: 383,
               color: Color(0xffF4F5FA),
               child: Column(
                 children: [
@@ -55,7 +52,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                       onTap: () => Get.toNamed(Routes.TECHNINCALFORM),
                       child: MyText(
                         text: "Edit",
-                        size: 14.sp,
+                        size: 14,
                         weight: FontWeight.w400,
                         color: Colors.black.withOpacity(0.5),
                       ),
@@ -66,12 +63,12 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                     children: [
                       MyText(
                         text: "Athletic",
-                        size: 20.sp,
+                        size: 20,
                         weight: FontWeight.w500,
                         color: Colors.black,
                       ),
                       SizedBox(
-                        height: 32.h,
+                        height: 32,
                       ),
                       CircularPercentIndicator(
                         backgroundColor: Color(0xffF1F1F1),
@@ -82,14 +79,14 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                         center: new Text(
                           "87%",
                           style: new TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 16.sp),
+                              fontWeight: FontWeight.w600, fontSize: 16),
                         ),
                         progressColor: Color(0xff4CAF50),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 31.h,
+                    height: 31,
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 5),
@@ -103,36 +100,36 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               children: [
                                 MyText(
                                   text: "Strength",
-                                  size: 20.sp,
+                                  size: 20,
                                   weight: FontWeight.w500,
                                   color: Colors.black,
                                 ),
                                 SizedBox(
-                                  height: 15.h,
+                                  height: 15,
                                 ),
                                 SizedBox(
-                                  width: 213.w,
+                                  width: 213,
                                   child: LinearProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff4CAF50)),
                                     backgroundColor:
                                         Color(0xff4CAF50).withOpacity(0.2),
                                     value: 0.5,
-                                    minHeight: 10.h,
+                                    minHeight: 10,
                                   ),
                                 ),
                               ],
                             ),
                             MyText(
                               text: "+5",
-                              size: 24.sp,
+                              size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: 33.h,
+                          height: 33,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,36 +139,36 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               children: [
                                 MyText(
                                   text: "Intelligence",
-                                  size: 20.sp,
+                                  size: 20,
                                   weight: FontWeight.w500,
                                   color: Colors.black,
                                 ),
                                 SizedBox(
-                                  height: 15.h,
+                                  height: 15,
                                 ),
                                 SizedBox(
-                                  width: 213.w,
+                                  width: 213,
                                   child: LinearProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xffFF6060)),
                                     backgroundColor:
                                         Color(0xffFF6060).withOpacity(0.2),
                                     value: 0.9,
-                                    minHeight: 10.h,
+                                    minHeight: 10,
                                   ),
                                 ),
                               ],
                             ),
                             MyText(
                               text: "+2",
-                              size: 24.sp,
+                              size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
                             )
                           ],
                         ),
                         SizedBox(
-                          height: 33.h,
+                          height: 33,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,36 +178,36 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               children: [
                                 MyText(
                                   text: "Agility",
-                                  size: 20.sp,
+                                  size: 20,
                                   weight: FontWeight.w500,
                                   color: Colors.black,
                                 ),
                                 SizedBox(
-                                  height: 15.h,
+                                  height: 15,
                                 ),
                                 SizedBox(
-                                  width: 213.w,
+                                  width: 213,
                                   child: LinearProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff3DA9FC)),
                                     backgroundColor:
                                         Color(0xff3DA9FC).withOpacity(0.2),
                                     value: 0.4,
-                                    minHeight: 10.h,
+                                    minHeight: 10,
                                   ),
                                 ),
                               ],
                             ),
                             MyText(
                               text: "-2",
-                              size: 24.sp,
+                              size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
                             )
                           ],
                         ),
                         SizedBox(
-                          height: 33.h,
+                          height: 33,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -220,29 +217,29 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               children: [
                                 MyText(
                                   text: "Speed",
-                                  size: 20.sp,
+                                  size: 20,
                                   weight: FontWeight.w500,
                                   color: Colors.black,
                                 ),
                                 SizedBox(
-                                  height: 15.h,
+                                  height: 15,
                                 ),
                                 SizedBox(
-                                  width: 213.w,
+                                  width: 213,
                                   child: LinearProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff389298)),
                                     backgroundColor:
                                         Color(0xff389298).withOpacity(0.2),
                                     value: 0.7,
-                                    minHeight: 10.h,
+                                    minHeight: 10,
                                   ),
                                 ),
                               ],
                             ),
                             MyText(
                               text: "-2",
-                              size: 24.sp,
+                              size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
                             )

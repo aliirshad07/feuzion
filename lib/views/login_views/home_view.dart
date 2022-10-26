@@ -1,12 +1,8 @@
 import 'package:feuzion/controllers/home_controller.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../core/colors.dart';
 
 HomeViewController controller = Get.put(HomeViewController());
@@ -27,8 +23,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 86.h, left: 20.w, bottom: 20),
-            width: 414.w,
+            padding: EdgeInsets.only(top: 86, left: 20, bottom: 20),
+            width: 414,
             color: Color(0xff04497B),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +36,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                     children: [
                       Container(
                         width: Get.width / 1.2,
-                        height: 100.h,
+                        height: 100,
                         child: TabBar(
                           indicator: UnderlineTabIndicator(
                             borderSide: BorderSide(
@@ -72,8 +68,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ),
                 ),
                 Container(
-                  width: 200.w,
-                  height: 120.h,
+                  width: 200,
+                  height: 120,
                   child: TabBarView(
                     physics: ScrollPhysics(),
                     controller: _tabController,
@@ -83,7 +79,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 24.sp,
+                            fontSize: 24,
                             color: Colors.white,
                             fontFamily: 'Poppins'),
                       ),
@@ -91,7 +87,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                         "Nutrition, Lifting, And Healthy Diet Plans For Football Players",
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 24.sp,
+                            fontSize: 24,
                             color: Colors.white,
                             fontFamily: 'Poppins'),
                       ),
@@ -99,23 +95,23 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ),
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 10,
                 ),
                 Row(
                   children: [
                     MyText(
                       text: "28 Oct 2021",
-                      size: 12.sp,
+                      size: 12,
                       weight: FontWeight.w400,
                       color: kWhiteColor,
                     ),
                     SizedBox(
-                      width: 10.w,
+                      width: 10,
                     ),
                     SvgPicture.asset(
                       "assets/icons/share_icon.svg",
-                      height: 18.h,
-                      width: 15.w,
+                      height: 18,
+                      width: 15,
                     )
                   ],
                 )
@@ -123,11 +119,11 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
             ),
           ),
           SizedBox(
-            height: 47.h,
+            height: 47,
           ),
           SingleChildScrollView(
             child: Container(
-              height: 350.h,
+              height: 350,
               child: ListView.builder(
                 scrollDirection: Axis.vertical,
                 physics: ScrollPhysics(),
@@ -155,7 +151,7 @@ class _NewsContainer extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: 20, right: 1, bottom: 5),
       margin: EdgeInsets.only(bottom: 10),
-      height: 122.h,
+      height: 122,
       width: Get.width,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -174,7 +170,7 @@ class _NewsContainer extends StatelessWidget {
             children: [
               MyText(
                 text: "A Guide to Proper Nutrition\nfor Football Players",
-                size: 16.sp,
+                size: 16,
                 weight: FontWeight.w500,
                 color: Colors.black,
                 fontFamily: 'Roboto',
@@ -182,7 +178,7 @@ class _NewsContainer extends StatelessWidget {
               MyText(
                 text:
                     "When it comes to fueling a football player there is\nunequivocally no one size fits all nutrition plan",
-                size: 8.sp,
+                size: 8,
                 weight: FontWeight.w400,
                 color: Colors.grey,
                 fontFamily: 'Roboto',
@@ -191,30 +187,30 @@ class _NewsContainer extends StatelessWidget {
                 children: [
                   MyText(
                     text: "28 Oct 2021",
-                    size: 12.sp,
+                    size: 12,
                     weight: FontWeight.w400,
                     color: Colors.grey,
                     fontFamily: 'Roboto',
                   ),
                   SizedBox(
-                    width: 10.w,
+                    width: 10,
                   ),
                   SvgPicture.asset(
                     "assets/icons/share_icon.svg",
                     color: Colors.grey,
-                    height: 18.h,
-                    width: 15.w,
+                    height: 18,
+                    width: 15,
                   )
                 ],
               )
             ],
           ),
           SizedBox(
-            width: 26.w,
+            width: 26,
           ),
           Container(
-            height: 98.h,
-            width: 144.w,
+            height: 98,
+            width: 144,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/icons/juiceimagE.png"),

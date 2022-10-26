@@ -6,7 +6,7 @@ abstract class Routes {
   static const SPLASH = Paths.PAYMENT;
   static const LOGIN = Paths.LOGIN;
   static const SIGNUP = Paths.SIGNUP;
-  static const SIGNUP2 = Paths.SIGNUP2;
+  static const COMPLETEACCOUNT = Paths.SIGNUP2;
   static const PAYMENT = Paths.PAYMENT;
   static const BOTTOMTABS = Paths.BOTTOMTABS;
   static const HOME = Paths.HOME;

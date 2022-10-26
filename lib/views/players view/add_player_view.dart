@@ -1,16 +1,11 @@
 import 'package:feuzion/controllers/add_player_controller.dart';
 import 'package:feuzion/core/widgets/login_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../../core/colors.dart';
-import '../../core/routes/app_pages.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/form_validators.dart';
 import '../../core/widgets/my_text_field.dart';
@@ -36,15 +31,15 @@ class AddPlayerView extends GetView<AddPlayerController> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 34.h,
+                    height: 34,
                   ),
                   SvgPicture.asset(
                     "assets/icons/add_player_profile.svg",
-                    height: 104.h,
-                    width: 101.w,
+                    height: 104,
+                    width: 101,
                   ),
                   SizedBox(
-                    height: 41.h,
+                    height: 41,
                   ),
                   LoginFields(
                     hintText: 'First Name',
@@ -57,7 +52,7 @@ class AddPlayerView extends GetView<AddPlayerController> {
                   //   fieldvalidator: nameValidator,
                   // ),
                   SizedBox(
-                    height: 10.h,
+                    height: 10,
                   ),
                   // MyTextField(
                   //   labelText: 'Last Name',
@@ -70,7 +65,7 @@ class AddPlayerView extends GetView<AddPlayerController> {
                     controller: controller.lastNameController,
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: 10,
                   ),
                   MyTextField(
                     labelText: 'Date of Birth',
@@ -98,12 +93,12 @@ class AddPlayerView extends GetView<AddPlayerController> {
                     },
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: 10,
                   ),
                   Row(
                     children: [
                       SizedBox(
-                          width: 173.54.w,
+                          width: 173.54,
                           child: LoginFields(
                             hintText: 'Age',
                             controller: controller.ageController,
@@ -116,11 +111,11 @@ class AddPlayerView extends GetView<AddPlayerController> {
                           // ),
                           ),
                       SizedBox(
-                        width: 25.w,
+                        width: 25,
                       ),
                       Expanded(
                         child: SizedBox(
-                            width: 173.54.w,
+                            width: 173.54,
                             child: LoginFields(
                               hintText: 'Weight',
                               fieldValidator: weightValidator,
@@ -136,12 +131,12 @@ class AddPlayerView extends GetView<AddPlayerController> {
                     ],
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: 10,
                   ),
                   Row(
                     children: [
                       SizedBox(
-                          width: 173.54.w,
+                          width: 173.54,
                           child: LoginFields(
                             hintText: 'Height',
                             fieldValidator: heightValidator,
@@ -155,11 +150,11 @@ class AddPlayerView extends GetView<AddPlayerController> {
                           // ),
                           ),
                       SizedBox(
-                        width: 25.w,
+                        width: 25,
                       ),
                       Expanded(
                         child: SizedBox(
-                            width: 173.54.w,
+                            width: 173.54,
                             child: LoginFields(
                               hintText: 'Position',
                               controller: controller.positionController,
@@ -174,7 +169,7 @@ class AddPlayerView extends GetView<AddPlayerController> {
                     ],
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: 10,
                   ),
                   InkWell(
                     onTap: () {
@@ -184,7 +179,7 @@ class AddPlayerView extends GetView<AddPlayerController> {
                     child: TextButtonWidget(text: "Save"),
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 20,
                   ),
                 ],
               ),
