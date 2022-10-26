@@ -9,10 +9,10 @@ var fontRoboto = GoogleFonts.roboto;
 customToast(String msg) => Fluttertoast.showToast(
     msg: msg,
     toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.CENTER,
+    gravity: ToastGravity.SNACKBAR,
     timeInSecForIosWeb: 1,
-    backgroundColor: Colors.red,
-    textColor: Colors.white,
+    backgroundColor: Colors.white,
+    textColor: Colors.black,
     fontSize: 16.0);
 
 var borderForContainer = BoxDecoration(

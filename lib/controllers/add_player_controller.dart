@@ -1,10 +1,11 @@
+import 'package:feuzion/core/collections.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import '../core/routes/app_pages.dart';
 
 class AddPlayerController extends GetxController {
+  String? uid = Get.parameters["uid"];
+
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   TextEditingController firstNameController = TextEditingController();
@@ -16,8 +17,6 @@ class AddPlayerController extends GetxController {
   TextEditingController positionController = TextEditingController();
   int playerNumber = 1;
 
-  final _firestore = FirebaseFirestore.instance;
-
   void dobChanged(DateTime date) {
     if (date != null) {
       dobController.text = date.toString().split(' ')[0];
@@ -25,20 +24,6 @@ class AddPlayerController extends GetxController {
     update();
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   @override
   void dispose() {
@@ -61,29 +46,20 @@ class AddPlayerController extends GetxController {
     formKey.currentState!.save();
   }
 
-  void addplayer()async{
-    if(firstNameController.text.isNotEmpty ||
-        lastNameController.text.isNotEmpty ||
-        dobController.text.isNotEmpty ||
-        ageController.text.isNotEmpty ||
-        weightController.text.isNotEmpty ||
-        heightController.text.isNotEmpty ||
-        positionController.text.isNotEmpty
-    ){
-      _firestore.collection('players').doc().set({
-        "firstName": firstNameController.text,
-        "lastName": lastNameController.text,
-        "DOB": dobController.text,
-        "age": ageController.text,
-        "weight": weightController.text,
-        "height": heightController.text,
-        "position": positionController.text,
-        "playerNumber": playerNumber,
-      });
-      Get.toNamed(Routes.PLAYERLEVEL);
-    }else{
-      Get.snackbar("Empty Fields", "Please enter all fields");
-    }
+  void addPlayer()async{
+    if(!formKey.currentState!.validate()) return;
+
+    await usersCollection.doc(uid).collection("players").add({
+      "firstName": firstNameController.text,
+      "lastName": lastNameController.text,
+      "dob": dobController.text,
+      "age": ageController.text,
+      "weight": weightController.text,
+      "height": heightController.text,
+      "position": positionController.text,
+      "playerNumber": playerNumber,
+    });
+    Get.toNamed(Routes.PLAYERLEVEL);
     playerNumber++;
   }
 }

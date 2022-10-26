@@ -1,20 +1,18 @@
-import 'package:feuzion/controllers/home_controller.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../core/colors.dart';
 
-HomeViewController controller = Get.put(HomeViewController());
-
-class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+class HomeTab extends StatefulWidget {
+  final String uid;
+  const HomeTab({Key? key, required this.uid}) : super(key: key);
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<HomeTab> createState() => _HomeTabState();
 }
 
-class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
+class _HomeTabState extends State<HomeTab> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController? _tabController = TabController(length: 2, vsync: this);
@@ -23,9 +21,9 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 86, left: 20, bottom: 20),
+            padding: const EdgeInsets.only(top: 86, left: 20, bottom: 20),
             width: 414,
-            color: Color(0xff04497B),
+            color: const Color(0xff04497B),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -77,19 +75,11 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                       Text(
                         "Nutrition, Lifting, And Healthy Diet Plans For Football Players",
                         textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 24,
-                            color: Colors.white,
-                            fontFamily: 'Poppins'),
+                        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24, color: Colors.white, fontFamily: 'Poppins'),
                       ),
                       Text(
                         "Nutrition, Lifting, And Healthy Diet Plans For Football Players",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 24,
-                            color: Colors.white,
-                            fontFamily: 'Poppins'),
+                        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24, color: Colors.white, fontFamily: 'Poppins'),
                       ),
                     ],
                   ),
@@ -176,8 +166,7 @@ class _NewsContainer extends StatelessWidget {
                 fontFamily: 'Roboto',
               ),
               MyText(
-                text:
-                    "When it comes to fueling a football player there is\nunequivocally no one size fits all nutrition plan",
+                text: "When it comes to fueling a football player there is\nunequivocally no one size fits all nutrition plan",
                 size: 8,
                 weight: FontWeight.w400,
                 color: Colors.grey,

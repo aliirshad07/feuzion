@@ -16,6 +16,7 @@ class CompleteAccountController extends GetxController {
   TextEditingController usernameController = TextEditingController(),
       dobController = TextEditingController(),
       genderController = TextEditingController();
+
   final ImagePicker imagePicker = ImagePicker();
   RxString imagePath = "".obs;
 
@@ -44,7 +45,9 @@ class CompleteAccountController extends GetxController {
         "dob": dobController.text,
         "gender": genderController.text,
         "profilePicture": imageURL,
+        "accountCompleted": true,
       });
+
       customToast("Profile created");
       Get.offAllNamed("/root", parameters: {"uid": uid!});
     } on FirebaseException catch (e) {

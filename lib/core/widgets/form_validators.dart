@@ -56,28 +56,28 @@ String? cvvValidator(String value) {
   return null;
 }
 
-String? heightValidator(String value) {
+String? heightValidator(String? value) {
   // String pattern = r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}';
   // RegExp regex = RegExp(pattern);
-  if (value.length < 1) {
+  if (value!.isEmpty) {
     return "Please enter Height ";
   }
   return null;
 }
 
-String? ageValidator(String value) {
+String? ageValidator(String? value) {
   // String pattern = r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}';
   // RegExp regex = RegExp(pattern);
-  if (value.length < 1) {
+  if (value!.isEmpty) {
     return "Please enter Age ";
   }
   return null;
 }
 
-String? weightValidator(String value) {
+String? weightValidator(String? value) {
   // String pattern = r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}';
   // RegExp regex = RegExp(pattern);
-  if (value.length < 1) {
+  if (value!.isEmpty) {
     return "Please enter Wight ";
   }
   return null;

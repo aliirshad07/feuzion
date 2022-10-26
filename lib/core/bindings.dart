@@ -4,11 +4,9 @@ import 'package:feuzion/controllers/payment_view_controller.dart';
 import 'package:feuzion/controllers/player_aesthetic_controller.dart';
 import 'package:feuzion/controllers/player_education_controller.dart';
 import 'package:feuzion/controllers/player_over_all_performance_controller.dart';
-import 'package:feuzion/controllers/player_view_controller.dart';
 import 'package:get/get.dart';
 import '../controllers/add_player_controller.dart';
-import '../controllers/bottom_tabs_controller.dart';
-import '../controllers/home_controller.dart';
+import '../controllers/root_controller.dart';
 import '../controllers/login_controller.dart';
 import '../controllers/payment_controller.dart';
 import '../controllers/payment_successfull_controller.dart';
@@ -34,7 +32,7 @@ class LoginBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<LoginController>(
-          () => LoginController(),
+      () => LoginController(),
     );
   }
 }
@@ -43,7 +41,7 @@ class SignupBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<SignupController>(
-          () => SignupController(),
+      () => SignupController(),
     );
   }
 }
@@ -52,33 +50,19 @@ class CompleteAccountBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<CompleteAccountController>(
-          () => CompleteAccountController(),
+      () => CompleteAccountController(),
     );
   }
 }
-
-// ###############################################################################
-
-class HomeViewBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<HomeViewController>(
-      () => HomeViewController(),
-    );
-  }
-}
-
-
 
 class RootBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<BottomTabsController>(
-      () => BottomTabsController(),
-    );
+    Get.lazyPut<RootController>(() => RootController());
   }
 }
 
+// ###############################################################################
 
 class PaymentBinding extends Bindings {
   @override
@@ -103,15 +87,6 @@ class PaymentSuccessfulViewBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<PaymentSuccessfulController>(
       () => PaymentSuccessfulController(),
-    );
-  }
-}
-
-class PlayerViewBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<PlayerViewController>(
-      () => PlayerViewController(),
     );
   }
 }

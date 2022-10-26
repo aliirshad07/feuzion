@@ -7,20 +7,18 @@ import 'package:feuzion/views/players%20view/player_profile_view.dart';
 import 'package:feuzion/views/players%20view/player_social_view.dart';
 import 'package:feuzion/views/players%20view/player_technical_form.dart';
 import 'package:feuzion/views/players%20view/player_technical_view.dart';
-import 'package:feuzion/views/players%20view/players_view.dart';
+import 'package:feuzion/views/tabs/players_tab.dart';
 import 'package:get/get.dart';
 
 import '../../core/bindings.dart';
-
-import '../../views/login_views/bottom_tabs_view.dart';
-import '../../views/login_views/home_view.dart';
+import '../../views/root.dart';
 import '../../views/login_view.dart';
 import '../../views/login_views/payment_option_view.dart';
 import '../../views/completeaccount_view.dart';
 import '../../views/signup_view.dart';
 
 import '../../views/splash_view.dart';
-import '../../views/players view/add_player_view.dart';
+import '../../views/add_player_view.dart';
 
 import '../../views/players view/player_athletic_view.dart';
 import '../../views/players view/player_levels_view.dart';
@@ -38,11 +36,6 @@ class AppPages {
       name: "/",
       page: () => const SplashView(),
       binding: SplashBinding(),
-    ),
-    GetPage(
-      name: Paths.HOME,
-      page: () => const HomeView(),
-      binding: HomeViewBinding(),
     ),
     GetPage(
       name: "/root",
@@ -65,6 +58,11 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
+      name: "/add_player",
+      page: () => const AddPlayerView(),
+      binding: AddPlayerBinding(),
+    ),
+    GetPage(
       name: Paths.PAYMENT,
       page: () => const PaymentOptionView(),
       binding: PaymentBinding(),
@@ -79,11 +77,7 @@ class AppPages {
       page: () => PaymentSuccessfulView(),
       binding: PaymentSuccessfulViewBinding(),
     ),
-    GetPage(
-      name: Paths.PLAYERVIEW,
-      page: () => PlayersView(),
-      binding: PlayerViewBinding(),
-    ),
+
     GetPage(
       name: Paths.ADDPLAYER,
       page: () => AddPlayerView(),
