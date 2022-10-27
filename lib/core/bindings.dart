@@ -10,7 +10,6 @@ import '../controllers/root_controller.dart';
 import '../controllers/login_controller.dart';
 import '../controllers/payment_controller.dart';
 import '../controllers/payment_successfull_controller.dart';
-import '../controllers/player_levels_controller.dart';
 import '../controllers/player_performance_controller.dart';
 import '../controllers/player_profile_controller.dart';
 import '../controllers/player_social_controller.dart';
@@ -62,6 +61,24 @@ class RootBinding extends Bindings {
   }
 }
 
+class AddPlayerBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<AddPlayerController>(
+          () => AddPlayerController(),
+    );
+  }
+}
+
+class PlayerDetailsBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PlayerDetailsController>(
+          () => PlayerDetailsController(),
+    );
+  }
+}
+
 // ###############################################################################
 
 class PaymentBinding extends Bindings {
@@ -91,32 +108,7 @@ class PaymentSuccessfulViewBinding extends Bindings {
   }
 }
 
-class AddPlayerBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<AddPlayerController>(
-      () => AddPlayerController(),
-    );
-  }
-}
 
-class PlayerLevelBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<PlayerLevelsController>(
-      () => PlayerLevelsController(),
-    );
-  }
-}
-
-class PlayerViewProfileBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<PlayerViewProfileController>(
-      () => PlayerViewProfileController(),
-    );
-  }
-}
 
 class PlayerPerformanceBinding extends Bindings {
   @override

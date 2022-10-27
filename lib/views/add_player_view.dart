@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:feuzion/controllers/add_player_controller.dart';
 import 'package:feuzion/core/widgets/login_field.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,6 @@ class AddPlayerView extends GetView<AddPlayerController> {
     return Container(
       decoration: kScaffoldBkgDecoration,
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           centerTitle: true,
@@ -31,12 +32,30 @@ class AddPlayerView extends GetView<AddPlayerController> {
               key: controller.formKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 35),
-                  SvgPicture.asset(
-                    "assets/icons/add_player_profile.svg",
-                    height: 104,
-                    width: 101,
+                  Center(
+                    child: GestureDetector(
+                      onTap: () => controller.pickUploadOption(),
+                      child: Obx(
+                        () => controller.imagePath.value.isNotEmpty
+                            ? ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: Image.file(
+                                  File(controller.imagePath.value),
+                                  height: 100,
+                                  width: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            : SvgPicture.asset(
+                                "assets/icons/add_player_profile.svg",
+                                height: 100,
+                                width: 100,
+                              ),
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 40),
                   LoginFields(

@@ -27,8 +27,8 @@ class CompleteAccountView extends GetView<CompleteAccountController> {
               alignment: Alignment.bottomCenter,
               child: Stack(children: [
                 Container(
-                  height: getHorizontalSize(101),
-                  width: getHorizontalSize(101),
+                  height: getHorizontalSize(100),
+                  width: getHorizontalSize(100),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.white, width: 3),
@@ -37,7 +37,10 @@ class CompleteAccountView extends GetView<CompleteAccountController> {
                     () => ClipRRect(
                       borderRadius: BorderRadius.circular(100),
                       child: controller.imagePath.value.isNotEmpty
-                          ? Image.file(File(controller.imagePath.value))
+                          ? Image.file(
+                              File(controller.imagePath.value),
+                              fit: BoxFit.cover,
+                            )
                           : CircleAvatar(
                               backgroundColor: const Color(0xff17344C),
                               child: Image.asset('assets/icons/profil_icon.png'),

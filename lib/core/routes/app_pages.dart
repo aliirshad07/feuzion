@@ -3,7 +3,7 @@ import 'package:feuzion/views/login_views/payment_successful_view.dart';
 import 'package:feuzion/views/login_views/payment_view.dart';
 import 'package:feuzion/views/players%20view/player_education_view.dart';
 import 'package:feuzion/views/players%20view/player_over_all_performance_view.dart';
-import 'package:feuzion/views/players%20view/player_profile_view.dart';
+import 'package:feuzion/views/player_details.dart';
 import 'package:feuzion/views/players%20view/player_social_view.dart';
 import 'package:feuzion/views/players%20view/player_technical_form.dart';
 import 'package:feuzion/views/players%20view/player_technical_view.dart';
@@ -21,7 +21,6 @@ import '../../views/splash_view.dart';
 import '../../views/add_player_view.dart';
 
 import '../../views/players view/player_athletic_view.dart';
-import '../../views/players view/player_levels_view.dart';
 import '../../views/players view/player_performance_view.dart';
 import '../../views/players view/player_psychology_view.dart';
 
@@ -63,6 +62,11 @@ class AppPages {
       binding: AddPlayerBinding(),
     ),
     GetPage(
+      name: "/player_details",
+      page: () => const PlayerDetails(),
+      binding: PlayerDetailsBinding(),
+    ),
+    GetPage(
       name: Paths.PAYMENT,
       page: () => const PaymentOptionView(),
       binding: PaymentBinding(),
@@ -78,21 +82,6 @@ class AppPages {
       binding: PaymentSuccessfulViewBinding(),
     ),
 
-    GetPage(
-      name: Paths.ADDPLAYER,
-      page: () => AddPlayerView(),
-      binding: AddPlayerBinding(),
-    ),
-    GetPage(
-      name: Paths.PLAYERLEVEL,
-      page: () => PlayerLevelView(),
-      binding: PlayerLevelBinding(),
-    ),
-    GetPage(
-      name: Paths.PLAYERVIEWPROFILE,
-      page: () => PlayerProfileView(),
-      binding: PlayerViewProfileBinding(),
-    ),
     GetPage(
       name: Paths.PLAYERPERFORMACE,
       page: () => const PlayerPerformanceView(),

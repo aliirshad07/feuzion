@@ -36,6 +36,7 @@ class _HomeTabState extends State<HomeTab> with TickerProviderStateMixin {
                         width: Get.width / 1.2,
                         height: 100,
                         child: TabBar(
+                          isScrollable: true,
                           indicator: UnderlineTabIndicator(
                             borderSide: BorderSide(
                               width: 2,
