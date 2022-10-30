@@ -4,6 +4,7 @@ import 'package:feuzion/controllers/payment_view_controller.dart';
 import 'package:feuzion/controllers/player_aesthetic_controller.dart';
 import 'package:feuzion/controllers/player_education_controller.dart';
 import 'package:feuzion/controllers/player_over_all_performance_controller.dart';
+import 'package:feuzion/controllers/player_physchology_controller.dart';
 import 'package:get/get.dart';
 import '../controllers/add_player_controller.dart';
 import '../controllers/root_controller.dart';
@@ -152,6 +153,9 @@ class PlayerPyschologyBinding extends Bindings {
     Get.lazyPut<PlayerAestheticController>(
       () => PlayerAestheticController(),
     );
+    Get.lazyPut<PlayerPyschologyController>(
+          () => PlayerPyschologyController(),
+    );
   }
 }
 
@@ -190,3 +194,6 @@ class DietPlanBinding extends Bindings {
     );
   }
 }
+
+
+

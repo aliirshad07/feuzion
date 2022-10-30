@@ -1,9 +1,12 @@
+import 'package:feuzion/controllers/player_performance_controller.dart';
 import 'package:feuzion/core/widgets/custom_app_bar.dart';
 import 'package:feuzion/core/widgets/my_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:get/get.dart';
 import '../../core/colors.dart';
+import 'package:feuzion/core/routes/app_pages.dart';
+import 'package:feuzion/views/players view/player_performance_edit_view.dart';
 
 final List icon = [
   'assets/icons/kickPower.svg',
@@ -30,14 +33,9 @@ final List percent = [
   '03',
 ];
 
-class PlayerPerformanceView extends StatefulWidget {
-  const PlayerPerformanceView({Key? key}) : super(key: key);
+class PlayerPerformanceView extends GetView<PlayerPerformanceController> {
+  PlayerPerformanceController _controller = Get.put(PlayerPerformanceController());
 
-  @override
-  State<PlayerPerformanceView> createState() => _PlayerPerformanceViewState();
-}
-
-class _PlayerPerformanceViewState extends State<PlayerPerformanceView> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,15 +60,48 @@ class _PlayerPerformanceViewState extends State<PlayerPerformanceView> {
             SizedBox(
               height: 81,
             ),
-            ListView.builder(
-                shrinkWrap: true,
-                itemCount: icon.length,
-                itemBuilder: (context, indexx) {
-                  return _ReuseContainerPerformance(
-                      svgAssetPerformance: icon[indexx],
-                      middleText: text[indexx],
-                      percentText: percent[indexx]);
-                })
+            _ReuseContainerPerformance(
+              svgAssetPerformance: icon[0],
+              middleText: text[0],
+              percentText: _controller.initialKickPower,
+            ),
+            _ReuseContainerPerformance(
+              svgAssetPerformance: icon[1],
+              middleText: text[1],
+              percentText: _controller.initialGames,
+            ),
+            _ReuseContainerPerformance(
+              svgAssetPerformance: icon[2],
+              middleText: text[2],
+              percentText: _controller.initialFouls,
+            ),
+            _ReuseContainerPerformance(
+              svgAssetPerformance: icon[3],
+              middleText: text[3],
+              percentText: _controller.initialMinutesPlayed,
+            ),
+            _ReuseContainerPerformance(
+              svgAssetPerformance: icon[4],
+              middleText: text[4],
+              percentText: _controller.initialShortOnTarget,
+            ),
+            _ReuseContainerPerformance(
+              svgAssetPerformance: icon[5],
+              middleText: text[5],
+              percentText: _controller.initialSaves,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Get.to(PlayerPerformanceEditView());
+                  },
+                  child: Icon(Icons.edit),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -91,7 +122,7 @@ class _ReuseContainerPerformance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Obx(() => Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
       height: 60,
@@ -124,6 +155,6 @@ class _ReuseContainerPerformance extends StatelessWidget {
           )
         ],
       ),
-    );
+    ));
   }
 }

@@ -1,4 +1,5 @@
-
+import 'package:feuzion/controllers/player_technical_controller.dart';
+import 'package:feuzion/core/widgets/edit_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/colors.dart';
@@ -6,20 +7,14 @@ import '../../core/constants.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/my_text.dart';
 import '../../core/widgets/text_button.dart';
+import 'package:feuzion/core/bindings.dart';
 
-class PlayerTechnicalForm extends StatefulWidget {
-  const PlayerTechnicalForm({Key? key}) : super(key: key);
-
-  @override
-  State<PlayerTechnicalForm> createState() => _PlayerTechnicalFormState();
-}
-
-class _PlayerTechnicalFormState extends State<PlayerTechnicalForm> {
+class PlayerTechnicalForm extends GetView<PlayerTechnicalController>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: kScaffoldBkgDecoration,
-      child: Scaffold(
+        decoration: kScaffoldBkgDecoration,
+        child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBar(
             title: "T.A.P.E.S",
@@ -31,70 +26,49 @@ class _PlayerTechnicalFormState extends State<PlayerTechnicalForm> {
             width: 383,
             height: 527,
             color: Color(0xffF4F5FA),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: MyText(
-                    text: "Technical",
-                    size: 20,
-                    weight: FontWeight.w500,
-                    color: Colors.black,
-                    fontFamily: 'Roboto',
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: MyText(
+                      text: "Technical",
+                      size: 20,
+                      weight: FontWeight.w500,
+                      color: Colors.black,
+                      fontFamily: 'Roboto',
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 55,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    MyText(
-                      text: "Touch",
-                      size: 18,
-                      color: kBlackColor,
-                      weight: FontWeight.w500,
-                      fontFamily: 'Roboto',
+                  SizedBox(height: 60,),
+                  Obx(() => editCard(
+                    title: 'Touch',
+                    initialValue: controller.initialTouch.value,
+                    onChanged: (val){
+                      controller.initialTouch.value = val.toInt();
+                    },
+                  ),
+                  ),
+                  Obx(() => editCard(
+                    title: 'Intelligence',
+                    initialValue: controller.initialIntelligence.value,
+                    onChanged: (val){
+                      controller.initialIntelligence.value = val.toInt();
+                    },
+                  ),
+                  ),
+                  SizedBox(height: 66),
+                  InkWell(
+                    onTap: () => Get.back(),
+                    child: TextButtonWidget(
+                      text: "Save",
                     ),
-                    SizedBox(
-                      height: 11,
-                    ),
-                    _TextForm(
-                      labelText: 'Enter Value',
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 28,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    MyText(
-                      text: "Touch",
-                      size: 18,
-                      color: kBlackColor,
-                      weight: FontWeight.w500,
-                      fontFamily: 'Roboto',
-                    ),
-                    SizedBox(
-                      height: 11,
-                    ),
-                    _TextForm(
-                      labelText: 'Enter Value',
-                    ),
-                    SizedBox(height: 66),
-                    InkWell(
-                      onTap: () => Get.back(),
-                      child: TextButtonWidget(
-                        text: "Save",
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          )),
+                  ),
+                ],
+              ),
+            )
+          ),
+        )
     );
   }
 }

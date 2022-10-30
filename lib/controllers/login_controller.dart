@@ -12,7 +12,7 @@ class LoginController extends GetxController {
   final _auth = FirebaseAuth.instance;
 
   loginUser() async {
-    if (!formKey.currentState!.validate()) return;
+    // if (!formKey.currentState!.validate()) return;
 
     try {
       await _auth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text).then((value) async {

@@ -4,17 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/colors.dart';
 import '../../core/widgets/my_text.dart';
+import 'package:feuzion/controllers/player_over_all_performance_controller.dart';
 
-class PlayerOverAllPerformanceView extends StatefulWidget {
-  const PlayerOverAllPerformanceView({Key? key}) : super(key: key);
-
-  @override
-  State<PlayerOverAllPerformanceView> createState() =>
-      _PlayerOverAllPerformanceViewState();
-}
-
-class _PlayerOverAllPerformanceViewState
-    extends State<PlayerOverAllPerformanceView> {
+class PlayerOverAllPerformanceView extends GetView<PlayerOverAlllPerformanceController> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +41,7 @@ class _PlayerOverAllPerformanceViewState
                   color: AlwaysStoppedAnimation<Color>(
                     Color(0xffFF6060),
                   ),
-                  percentText: '67%',
+                  percentText: '${controller.initialTechnical.value}',
                   percentTextcolor: Color(0xffFF6060),
                 ),
               ),
@@ -66,7 +58,7 @@ class _PlayerOverAllPerformanceViewState
                   color: AlwaysStoppedAnimation<Color>(
                     Color(0xff4CAF50),
                   ),
-                  percentText: '57%',
+                  percentText: '${controller.initialAthletic.value}',
                   percentTextcolor: Color(0xff4CAF50),
                 ),
               ),
@@ -83,7 +75,7 @@ class _PlayerOverAllPerformanceViewState
                   color: AlwaysStoppedAnimation<Color>(
                     Color(0xff4CAF50),
                   ),
-                  percentText: '78%',
+                  percentText: '${controller.initialPsychology.value}',
                   percentTextcolor: Color(0xff4CAF50),
                 ),
               ),
@@ -100,7 +92,7 @@ class _PlayerOverAllPerformanceViewState
                   color: AlwaysStoppedAnimation<Color>(
                     Color(0xff3DA9FC),
                   ),
-                  percentText: '67%',
+                  percentText: '${controller.initialEducation.value}',
                   percentTextcolor: Color(0xff3DA9FC),
                 ),
               ),
@@ -117,7 +109,7 @@ class _PlayerOverAllPerformanceViewState
                   color: AlwaysStoppedAnimation<Color>(
                     Color(0xff389298),
                   ),
-                  percentText: '27%',
+                  percentText: '${controller.initialSocial.value}',
                   percentTextcolor: Color(0xff389298),
                 ),
               ),

@@ -1,3 +1,4 @@
+import 'package:feuzion/controllers/player_education_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -5,15 +6,9 @@ import '../../core/colors.dart';
 import '../../core/routes/app_pages.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/my_text.dart';
+import 'package:feuzion/views/players view/player_education_form.dart';
 
-class PlayerEducationView extends StatefulWidget {
-  const PlayerEducationView({Key? key}) : super(key: key);
-
-  @override
-  State<PlayerEducationView> createState() => _PlayerEducationViewState();
-}
-
-class _PlayerEducationViewState extends State<PlayerEducationView> {
+class PlayerEducationView extends GetView<PlayerEducationController>{
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,7 +45,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                   Align(
                     alignment: Alignment.topRight,
                     child: InkWell(
-                      onTap: () => Get.toNamed(Routes.TECHNINCALFORM),
+                      onTap: () => Get.to(PlayerEducationForm()),
                       child: MyText(
                         text: "Edit",
                         size: 14,
@@ -117,7 +112,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff3DA9FC)),
                                     backgroundColor:
-                                        Color(0xff3DA9FC).withOpacity(0.2),
+                                    Color(0xff3DA9FC).withOpacity(0.2),
                                     value: 0.9,
                                     minHeight: 10,
                                   ),
@@ -125,7 +120,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                               ],
                             ),
                             MyText(
-                              text: "+5",
+                              text: "${controller.initialTouch.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -158,7 +153,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff3DA9FC)),
                                     backgroundColor:
-                                        Color(0xff3DA9FC).withOpacity(0.2),
+                                    Color(0xff3DA9FC).withOpacity(0.2),
                                     value: 0.5,
                                     minHeight: 10,
                                   ),
@@ -166,7 +161,7 @@ class _PlayerEducationViewState extends State<PlayerEducationView> {
                               ],
                             ),
                             MyText(
-                              text: "-2",
+                              text: "${controller.initialIntelligence.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,

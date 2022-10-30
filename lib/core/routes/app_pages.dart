@@ -33,7 +33,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: "/",
-      page: () => const SplashView(),
+      page: () =>  SplashView(),
       binding: SplashBinding(),
     ),
     GetPage(
@@ -43,37 +43,37 @@ class AppPages {
     ),
     GetPage(
       name: "/signup",
-      page: () => const SignupView(),
+      page: () =>  SignupView(),
       binding: SignupBinding(),
     ),
     GetPage(
       name: "/complete_account",
-      page: () => const CompleteAccountView(),
+      page: () =>  CompleteAccountView(),
       binding: CompleteAccountBinding(),
     ),
     GetPage(
       name: "/login",
-      page: () => const LoginView(),
+      page: () =>  LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
       name: "/add_player",
-      page: () => const AddPlayerView(),
+      page: () =>  AddPlayerView(),
       binding: AddPlayerBinding(),
     ),
     GetPage(
       name: "/player_details",
-      page: () => const PlayerDetails(),
+      page: () =>  PlayerDetails(),
       binding: PlayerDetailsBinding(),
     ),
     GetPage(
       name: Paths.PAYMENT,
-      page: () => const PaymentOptionView(),
+      page: () =>  PaymentOptionView(),
       binding: PaymentBinding(),
     ),
     GetPage(
       name: Paths.PAYMENTVIEW,
-      page: () => const PaymentView(),
+      page: () =>  PaymentView(),
       binding: PaymentViewBinding(),
     ),
     GetPage(
@@ -84,27 +84,27 @@ class AppPages {
 
     GetPage(
       name: Paths.PLAYERPERFORMACE,
-      page: () => const PlayerPerformanceView(),
+      page: () => PlayerPerformanceView(),
       binding: PlayerPerformanceBinding(),
     ),
     GetPage(
       name: Paths.PLAYEOVERALLRPERFORMACE,
-      page: () => const PlayerOverAllPerformanceView(),
+      page: () =>  PlayerOverAllPerformanceView(),
       binding: PlayerOverAllPerformanceBinding(),
     ),
     GetPage(
       name: Paths.PLAYERAESTHETIC,
-      page: () => const PlayerAthleticView(),
+      page: () =>  PlayerAthleticView(),
       binding: PlayerAestheticBinding(),
     ),
     GetPage(
       name: Paths.PLAYERPYSCHOLOGY,
-      page: () => const PlayerPsychologyView(),
+      page: () =>  PlayerPsychologyView(),
       binding: PlayerPyschologyBinding(),
     ),
     GetPage(
       name: Paths.PLAYEREDUCATION,
-      page: () => const PlayerEducationView(),
+      page: () =>  PlayerEducationView(),
       binding: PlayerEducationBinding(),
     ),
     GetPage(
@@ -114,7 +114,7 @@ class AppPages {
     ),
     GetPage(
       name: Paths.TECHNINCALFORM,
-      page: () => const PlayerTechnicalForm(),
+      page: () =>  PlayerTechnicalForm(),
       binding: PlayerTechnicalFormBinding(),
     ),
     GetPage(

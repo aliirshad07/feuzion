@@ -3,6 +3,9 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 
 class PlayerSocialController extends GetxController {
   final count = 0.obs;
+  final initialTouch = 0.obs;
+  final initialIntelligence = 0.obs;
+
   @override
   void onInit() async {
     super.onInit();

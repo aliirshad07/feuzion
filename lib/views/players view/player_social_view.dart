@@ -2,7 +2,7 @@ import 'package:feuzion/controllers/player_social_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
+import 'package:feuzion/views/players view/player_social_form.dart';
 import '../../core/colors.dart';
 import '../../core/routes/app_pages.dart';
 import '../../core/widgets/custom_app_bar.dart';
@@ -44,7 +44,7 @@ class PlayerSocialView extends GetView<PlayerSocialController> {
                   Align(
                     alignment: Alignment.topRight,
                     child: InkWell(
-                      onTap: () => Get.toNamed(Routes.TECHNINCALFORM),
+                      onTap: () => Get.to(PlayerSocialForm()),
                       child: MyText(
                         text: "Edit",
                         size: 14,
@@ -119,7 +119,7 @@ class PlayerSocialView extends GetView<PlayerSocialController> {
                               ],
                             ),
                             MyText(
-                              text: "+5",
+                              text: "${controller.initialTouch.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -159,7 +159,7 @@ class PlayerSocialView extends GetView<PlayerSocialController> {
                               ],
                             ),
                             MyText(
-                              text: "-2",
+                              text: "${controller.initialIntelligence.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,

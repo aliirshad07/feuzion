@@ -119,7 +119,7 @@ class PlayerTechnicalViewTwo extends GetView<PlayerTechnicalController> {
                               ],
                             ),
                             MyText(
-                              text: "+5",
+                              text: "${controller.initialTouch.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -160,7 +160,7 @@ class PlayerTechnicalViewTwo extends GetView<PlayerTechnicalController> {
                               ],
                             ),
                             MyText(
-                              text: "+2",
+                              text: "${controller.initialIntelligence.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,

@@ -1,20 +1,14 @@
+import 'package:feuzion/controllers/player_aesthetic_controller.dart';
 import 'package:feuzion/core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
+import 'package:feuzion/views/players view/player_athletic_form.dart';
 import '../../core/colors.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/my_text.dart';
 
-class PlayerAthleticView extends StatefulWidget {
-  const PlayerAthleticView({Key? key}) : super(key: key);
-
-  @override
-  State<PlayerAthleticView> createState() => _PlayerAthleticViewState();
-}
-
-class _PlayerAthleticViewState extends State<PlayerAthleticView> {
+class PlayerAthleticView extends GetView<PlayerAestheticController>{
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +43,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                   Align(
                     alignment: Alignment.topRight,
                     child: InkWell(
-                      onTap: () => Get.toNamed(Routes.TECHNINCALFORM),
+                      onTap: () => Get.to(PlayerAthleticForm()),
                       child: MyText(
                         text: "Edit",
                         size: 14,
@@ -113,7 +107,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff4CAF50)),
                                     backgroundColor:
-                                        Color(0xff4CAF50).withOpacity(0.2),
+                                    Color(0xff4CAF50).withOpacity(0.2),
                                     value: 0.5,
                                     minHeight: 10,
                                   ),
@@ -121,7 +115,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               ],
                             ),
                             MyText(
-                              text: "+5",
+                              text: "${controller.initialStrength.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -152,7 +146,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xffFF6060)),
                                     backgroundColor:
-                                        Color(0xffFF6060).withOpacity(0.2),
+                                    Color(0xffFF6060).withOpacity(0.2),
                                     value: 0.9,
                                     minHeight: 10,
                                   ),
@@ -160,7 +154,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               ],
                             ),
                             MyText(
-                              text: "+2",
+                              text: "${controller.initialIntelligence.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -191,7 +185,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff3DA9FC)),
                                     backgroundColor:
-                                        Color(0xff3DA9FC).withOpacity(0.2),
+                                    Color(0xff3DA9FC).withOpacity(0.2),
                                     value: 0.4,
                                     minHeight: 10,
                                   ),
@@ -199,7 +193,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               ],
                             ),
                             MyText(
-                              text: "-2",
+                              text: "${controller.initialAgility.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -230,7 +224,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff389298)),
                                     backgroundColor:
-                                        Color(0xff389298).withOpacity(0.2),
+                                    Color(0xff389298).withOpacity(0.2),
                                     value: 0.7,
                                     minHeight: 10,
                                   ),
@@ -238,7 +232,7 @@ class _PlayerAthleticViewState extends State<PlayerAthleticView> {
                               ],
                             ),
                             MyText(
-                              text: "-2",
+                              text: "${controller.initialSpeed.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,

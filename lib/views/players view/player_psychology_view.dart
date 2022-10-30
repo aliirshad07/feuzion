@@ -1,20 +1,14 @@
-
+import 'package:feuzion/views/players view/player_psychology_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import '../../controllers/player_physchology_controller.dart';
 import '../../core/colors.dart';
 import '../../core/routes/app_pages.dart';
 import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/my_text.dart';
 
-class PlayerPsychologyView extends StatefulWidget {
-  const PlayerPsychologyView({Key? key}) : super(key: key);
-
-  @override
-  State<PlayerPsychologyView> createState() => _PlayerPsychologyViewState();
-}
-
-class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
+class PlayerPsychologyView extends GetView<PlayerPyschologyController>{
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,7 +44,7 @@ class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
                   Align(
                     alignment: Alignment.topRight,
                     child: InkWell(
-                      onTap: () => Get.toNamed(Routes.TECHNINCALFORM),
+                      onTap: () => Get.to(PlayerPyschologyForm()),
                       child: MyText(
                         text: "Edit",
                         size: 14,
@@ -116,7 +110,7 @@ class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff4CAF50)),
                                     backgroundColor:
-                                        Color(0xff4CAF50).withOpacity(0.2),
+                                    Color(0xff4CAF50).withOpacity(0.2),
                                     value: 0.9,
                                     minHeight: 10,
                                   ),
@@ -124,7 +118,7 @@ class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
                               ],
                             ),
                             MyText(
-                              text: "+5",
+                              text: "${controller.initialMotivation.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -157,7 +151,7 @@ class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Color(0xff4CAF50)),
                                     backgroundColor:
-                                        Color(0xff4CAF50).withOpacity(0.2),
+                                    Color(0xff4CAF50).withOpacity(0.2),
                                     value: 0.5,
                                     minHeight: 10,
                                   ),
@@ -165,7 +159,7 @@ class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
                               ],
                             ),
                             MyText(
-                              text: "-2",
+                              text: "${controller.initialAttitude.value}",
                               size: 24,
                               weight: FontWeight.w400,
                               color: Colors.black,
@@ -187,4 +181,5 @@ class _PlayerPsychologyViewState extends State<PlayerPsychologyView> {
       ),
     );
   }
+
 }
