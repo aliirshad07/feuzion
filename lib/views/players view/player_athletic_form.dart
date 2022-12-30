@@ -1,4 +1,4 @@
-import 'package:feuzion/controllers/player_technical_controller.dart';
+import 'package:feuzion/controllers/player_aesthetic_controller.dart';
 import 'package:feuzion/core/widgets/edit_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,10 +8,7 @@ import '../../core/widgets/custom_app_bar.dart';
 import '../../core/widgets/my_text.dart';
 import '../../core/widgets/text_button.dart';
 
-class PlayerTechnicalForm extends GetView<PlayerTechnicalController>{
-
-
-
+class PlayerAthleticForm extends GetView<PlayerAestheticController>{
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,12 +39,12 @@ class PlayerTechnicalForm extends GetView<PlayerTechnicalController>{
                       fontFamily: 'Roboto',
                     ),
                   ),
-                  SizedBox(height: 60,),
+                  SizedBox(height: 30,),
                   Obx(() => editCard(
-                    title: 'Touch',
-                    initialValue: controller.initialTouch.value,
+                    title: 'Strength',
+                    initialValue: controller.initialStrength.value,
                     onChanged: (val){
-                      controller.initialTouch.value = val.toInt();
+                      controller.initialStrength.value = val.toInt();
                     },
                   ),
                   ),
@@ -59,7 +56,23 @@ class PlayerTechnicalForm extends GetView<PlayerTechnicalController>{
                     },
                   ),
                   ),
-                  const SizedBox(height: 66),
+                  Obx(() => editCard(
+                    title: 'Agility',
+                    initialValue: controller.initialAgility.value,
+                    onChanged: (val){
+                      controller.initialAgility.value = val.toInt();
+                    },
+                  ),
+                  ),
+                  Obx(() => editCard(
+                    title: 'Speed',
+                    initialValue: controller.initialSpeed.value,
+                    onChanged: (val){
+                      controller.initialSpeed.value = val.toInt();
+                    },
+                  ),
+                  ),
+                  SizedBox(height: 5),
                   InkWell(
                     onTap: () => Get.back(),
                     child: TextButtonWidget(
